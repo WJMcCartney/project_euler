@@ -11,7 +11,7 @@ public class problemTwo {
 		ArrayList<Integer> evenFibNumbers = new ArrayList<Integer>();
 
 		
-		while (originalNumber < 400000001) {
+		while (originalNumber < 4000001) {
 			if (originalNumber % 2 == 0) {
 				evenFibNumbers.add(originalNumber);
 			}
@@ -24,7 +24,7 @@ public class problemTwo {
 		System.out.println(evenFibNumbers);
 		for (int i=0; i<evenFibNumbers.size(); i++) {
 			sum += evenFibNumbers.get(i);
-			System.out.println(sum);
+			System.out.println(i+1 + ". " +sum);
 		}
 
 	}
