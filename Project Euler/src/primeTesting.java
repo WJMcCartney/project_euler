@@ -1,8 +1,7 @@
-
 import java.util.*;
 import java.lang.reflect.Array;
 
-public class problemSeven {
+public class primeTesting {
 
 	public static void main(String[] args) {
 		int none = 0;
@@ -38,4 +37,5 @@ public class problemSeven {
 		}
 
 	}
+
 
