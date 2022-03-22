@@ -17,6 +17,7 @@ public class problemEighteenAndSixtySevenVisuals implements Runnable {
 	private Thread thread;
 	private BufferStrategy bs;
 	private Graphics g;
+
 //object with parameters for our game window
 	public problemEighteenAndSixtySevenVisuals(String title, int width, int height) {
 		this.width = width;
@@ -33,6 +34,7 @@ public class problemEighteenAndSixtySevenVisuals implements Runnable {
 	private void tick() {
 
 	}
+
 //render the graphics
 	private void render() {
 		bs = display.getCanvas().getBufferStrategy();
@@ -41,35 +43,31 @@ public class problemEighteenAndSixtySevenVisuals implements Runnable {
 			return;
 		}
 		g = bs.getDrawGraphics();
-		//Clear Screen
-		g.clearRect(0,  0, width, height);
-		//DRAWING
+		// Clear Screen
+		g.clearRect(0, 0, width, height);
+		// DRAWING
 		g.setColor(Color.black);
-		g.fillRect(500,  400,  100,  70);
+		g.fillRect(500, 400, 100, 70);
 		g.setColor(Color.DARK_GRAY);
-		g.fillRect(590,  470,  10,  40);
-		g.fillRect(560,  470,  10,  40);
-		g.fillRect(530,  470,  10,  40);
-		g.fillRect(500,  470,  10,  40);
-		
-		g.fillRect(490,  390,  10,  10);
-		g.fillRect(480,  380,  10,  10);
-		g.fillRect(470,  370,  10,  10);
-		
-		g.fillRect(590,  360,  50,  50);
-		
-		g.fillRect(580,  350,  10,  10);
-		g.fillRect(640,  350,  10,  10);
+		g.fillRect(590, 470, 10, 40);
+		g.fillRect(560, 470, 10, 40);
+		g.fillRect(530, 470, 10, 40);
+		g.fillRect(500, 470, 10, 40);
+
+		g.fillRect(490, 390, 10, 10);
+		g.fillRect(480, 380, 10, 10);
+		g.fillRect(470, 370, 10, 10);
+
+		g.fillRect(590, 360, 50, 50);
+
+		g.fillRect(580, 350, 10, 10);
+		g.fillRect(640, 350, 10, 10);
 		g.setColor(Color.black);
-		g.fillRect(600,  370,  10,  10);
-		g.fillRect(620,  370,  10,  10);
-		g.fillRect(600,  390,  30,  10);
+		g.fillRect(600, 370, 10, 10);
+		g.fillRect(620, 370, 10, 10);
+		g.fillRect(600, 390, 30, 10);
 
-
-
-
-		
-		//END DRAWING
+		// END DRAWING
 		bs.show();
 		g.dispose();
 	}
@@ -84,6 +82,7 @@ public class problemEighteenAndSixtySevenVisuals implements Runnable {
 		}
 		stop();
 	}
+
 //start threads
 	public synchronized void start() {
 		if (running) {
@@ -93,6 +92,7 @@ public class problemEighteenAndSixtySevenVisuals implements Runnable {
 		thread = new Thread(this);
 		thread.start();
 	}
+
 //stop threads
 	public synchronized void stop() {
 		if (!running) {
