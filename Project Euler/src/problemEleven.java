@@ -3,8 +3,9 @@ public class problemEleven {
 
 	public static void main(String[] args) {
 		int n = 19;
-		int rowComparative=1;
+		int rowComparative = 1;
 		int product;
+		int biggestValue = 0;
 		int[][] inputs = { { 8, 02, 22, 97, 38, 15, 00, 40, 00, 75, 04, 05, 07, 78, 52, 12, 50, 77, 91, 8 },
 				{ 49, 49, 99, 40, 17, 81, 18, 57, 60, 87, 17, 40, 98, 43, 69, 48, 04, 56, 62, 00 },
 				{ 81, 49, 31, 73, 55, 79, 14, 29, 93, 71, 40, 67, 53, 88, 30, 03, 49, 13, 36, 65 },
@@ -25,27 +26,65 @@ public class problemEleven {
 				{ 20, 69, 36, 41, 72, 30, 23, 88, 34, 62, 99, 69, 82, 67, 59, 85, 74, 04, 36, 16 },
 				{ 20, 73, 35, 29, 78, 31, 90, 01, 74, 31, 49, 71, 48, 86, 81, 16, 23, 57, 05, 54 },
 				{ 01, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 01, 89, 19, 67, 48 } };
-		for (int i=0; i<n; i++) {
-			System.out.println("new row");
-			for (int j=0; j<n-2; j++) {
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < n - 2; j++) {
 				product = 1;
-				for (int k =0; k<4; k++) {
-				int marker = k+j;
-				rowComparative = inputs[i][marker];
-				System.out.print(rowComparative + " * ");
-				product *= rowComparative;
+				for (int k = 0; k < 4; k++) {
+					int marker = k + j;
+					rowComparative = inputs[i][marker];
+					product *= rowComparative;
 				}
-				System.out.println(product);
+				if (product > biggestValue) {
+					biggestValue = product;
+					System.out.println(biggestValue);
+				}
 			}
 		}
-		for (int i=0; i<n; i++) {
-			for (int j=0; j<n; j++) {
-				
+
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < n - 2; j++) {
+				product = 1;
+				for (int k = 0; k < 4; k++) {
+					int marker = k + j;
+					rowComparative = inputs[marker][i];
+					product *= rowComparative;
+				}
+				if (product > biggestValue) {
+					biggestValue = product;
+					System.out.println(biggestValue);
+				}
 			}
 		}
-		for (int i=0; i<n; i++) {
-			for (int j=0; j<n; j++) {
-				
+		for (int i = 0; i < n - 2; i++) {
+			for (int j = 0; j < n - 2; j++) {
+				product = 1;
+
+				for (int k = 0; k < 4; k++) {
+					int marker = k + j;
+					int markerColumn = k + i;
+					rowComparative = inputs[markerColumn][marker];
+					product *= rowComparative;
+				}
+				if (product > biggestValue) {
+					biggestValue = product;
+					System.out.println(biggestValue);
+				}
+			}
+		}
+		for (int i = 0; i < n - 2; i++) {
+			for (int j = 0; j < n - 2; j++) {
+				product = 1;
+				for (int k = 3; k >= 0; k--) {
+					int l = Math.abs(k - 3);
+					int marker = l + j;
+					int markerColumn = k + i;
+					rowComparative = inputs[markerColumn][marker];
+					product *= rowComparative;
+				}
+				if (product > biggestValue) {
+					biggestValue = product;
+					System.out.println(biggestValue);
+				}
 			}
 		}
 
