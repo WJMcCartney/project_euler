@@ -49,4 +49,3 @@ public class problemTwelve {
 		}
 	}
 }
-//27561600
