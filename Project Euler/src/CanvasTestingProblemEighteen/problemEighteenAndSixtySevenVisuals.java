@@ -13,6 +13,7 @@ public class problemEighteenAndSixtySevenVisuals implements Runnable{
 
 	private display display;
 	public String title;
+	public String p;
 	public int width, height;
 	public int centerWidth;
 	public int centerHeight;
@@ -23,11 +24,11 @@ public class problemEighteenAndSixtySevenVisuals implements Runnable{
 
 	
 //object with parameters for our game window
-	public problemEighteenAndSixtySevenVisuals(String title, int width, int height) {
+	public problemEighteenAndSixtySevenVisuals(String title, int width, int height, String p) {
 		this.width = width;
 		this.height = height;
 		this.title = title;
-
+		this.p = p;
 	}
 
 //runs once to initialize everything
@@ -51,7 +52,7 @@ public class problemEighteenAndSixtySevenVisuals implements Runnable{
 		// Clear Screen
 		g.clearRect(0, 0, width, height);
 		// DRAWING
-		
+		g.drawString(p, 50, 50);
 		// END DRAWING
 		bs.show();
 		g.dispose();
